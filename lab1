@@ -4,16 +4,16 @@ import java.util.Stack;
 
 public class zadanie2_1 {
 	public static void main(String[] args) {
-		 Stack<Integer> stack = new Stack<>();
-		 for (int i = 1; i < 4; i++) {
-		 stack.push(i); }
-		 System.out.println("Стек в прямом порядке: "+stack);
-		 reverse(stack);
-		 deque();
-         first();
+	Stack<Integer> stack = new Stack<>();
+	for (int i = 1; i < 4; i++) {
+	stack.push(i); }
+	System.out.println("Стек в прямом порядке: "+stack);
+	reverse(stack);
+	deque();
+        first();
 }
 	public static void deque() {
-	  	  ArrayDeque<Integer> states = new ArrayDeque<Integer>();
+	  	ArrayDeque<Integer> states = new ArrayDeque<Integer>();
 	        states.addFirst(1);
 	        states.add(2);
 	        states.addLast(3);
@@ -34,7 +34,7 @@ public class zadanie2_1 {
 	  	  ArrayDeque<Integer> states = new ArrayDeque<Integer>();
 	  	  states.addFirst(1);
 	  	  Integer sFirst=states.getFirst();
-	      System.out.println(sFirst);
+	          System.out.println(sFirst);
 	  	  return; }
 	  public static void reverse(Stack<Integer> a){
 	      a.sort(Collections.reverseOrder());
