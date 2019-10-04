@@ -1,0 +1,42 @@
+import java.util.ArrayDeque;
+import java.util.Collections;
+import java.util.Stack;
+
+public class zadanie2_1 {
+	public static void main(String[] args) {
+		 Stack<Integer> stack = new Stack<>();
+		 for (int i = 1; i < 4; i++) {
+		 stack.push(i); }
+		 System.out.println("Стек в прямом порядке: "+stack);
+		 reverse(stack);
+		 deque();
+         first();
+}
+	public static void deque() {
+	  	  ArrayDeque<Integer> states = new ArrayDeque<Integer>();
+	        states.addFirst(1);
+	        states.add(2);
+	        states.addLast(3);
+	        System.out.print("Очередь в прямом порядке: ");
+	        Integer s=states.poll();
+	        System.out.print(s); 
+	        Integer s1=states.getFirst();
+	        System.out.print(s1);
+	        Integer s2 = states.getLast();
+	        System.out.println(s2);  
+	        System.out.print("Очередь в обратном порядке: ");
+	        Integer s3 = states.pollLast();
+	        System.out.print(s3); 
+	        Integer s4=states.getLast();
+	        System.out.print(s4);
+	    }
+	    public static void first() {
+	  	  ArrayDeque<Integer> states = new ArrayDeque<Integer>();
+	  	  states.addFirst(1);
+	  	  Integer sFirst=states.getFirst();
+	      System.out.println(sFirst);
+	  	  return; }
+	  public static void reverse(Stack<Integer> a){
+	      a.sort(Collections.reverseOrder());
+	      System.out.println("Стек в обратном порядке: "+a);
+	  }}
