@@ -1,0 +1,101 @@
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Scanner;
+import java.util.Stack;
+
+public class zadanie2_1_2 {
+	private static String ludi = "ludi.txt"; 
+	private static String fname = "file.txt";
+	public static void main(String[] args) {
+	// 1 пункт
+	 Stack<Integer> stack = new Stack<>();
+	 for (int i = 1; i < 4; i++) {
+	 stack.push(i); }
+	System.out.println("Стек в прямом порядке: "+stack);
+	reverse(stack);
+	 deque();
+         first();
+         System.out.println();
+         // 2 пункт
+   	     stackk();
+		 queue();
+	}
+	public static void deque() {
+  	    ArrayDeque<Integer> states = new ArrayDeque<Integer>();
+        states.addFirst(1);
+        states.add(2);
+        states.addLast(3);
+        System.out.print("Очередь в прямом порядке: ");
+        Integer s=states.poll();
+        System.out.print(s); 
+        Integer s1=states.getFirst();
+        System.out.print(s1);
+        Integer sL = states.getLast();
+        System.out.println(sL);  
+        System.out.print("Очередь в обратном порядке: ");
+        Integer sL1 = states.pollLast();
+        System.out.print(sL1); 
+        Integer s2=states.getLast();
+        System.out.print(s2);
+    }
+    public static void first() {
+  	  ArrayDeque<Integer> states = new ArrayDeque<Integer>();
+  	  states.addFirst(1);
+  	  Integer sFirst=states.getFirst();
+      System.out.println(sFirst);
+  	  return;
+    }
+  public static void reverse(Stack<Integer> a){
+      a.sort(Collections.reverseOrder());
+      System.out.println("Стек в обратном порядке: "+a);
+  }
+		 public static void  stackk  (){
+		 try(BufferedReader br = 
+		   new BufferedReader(new InputStreamReader(new FileInputStream(ludi), "Windows-1251"));) {
+		   String line;
+		   Stack <String> stacck = new Stack<String>();
+		   while  ((line = br.readLine())!=null){
+		   stacck.push(line); 
+		  } 
+		  String data="2000";
+	      String data1="1990";
+	      System.out.println("Люди,которым меньше 40:"); 
+	      for(int i=0;i<4;i++) {
+	    	String str=stacck.pop();
+	      if (str.contains(data) || str.contains(data1)) {
+	    	  System.out.println(str);}
+	    	   }
+		    } catch (FileNotFoundException e) {
+		            e.printStackTrace();
+		        } catch (IOException e) {
+		            e.printStackTrace();
+		        }
+	      }
+		 public static void queue() {
+		 try {
+		    BufferedReader br = new BufferedReader(new FileReader("ludi.txt"));
+		    String line;
+		    ArrayDeque<String> deque = new ArrayDeque<>();
+		    while ((line = br.readLine()) != null) {
+		    deque.push(line); }
+		    String date="1968";
+		    String date1="1950";
+		    System.out.println("Остальные люди:");
+		    for(int i=0;i<4;i++) {
+		    String str=deque.pop();
+		    if (str.contains(date) || str.contains(date1)) {
+			System.out.println(str);}}
+		        } catch (IOException e) {
+		            e.printStackTrace();
+		        }}
+	}
