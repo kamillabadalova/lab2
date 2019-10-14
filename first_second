@@ -97,5 +97,5 @@ public class zadanie2_1_2 {
 			System.out.println(str);}}
 		        } catch (IOException e) {
 		            e.printStackTrace();
-		        }}
+		     }}
 	}
